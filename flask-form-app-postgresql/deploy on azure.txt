@@ -1,0 +1,103 @@
+Yes, you can deploy your Flask application on Microsoft Azure. Here's a step-by-step guide:
+
+First, prepare your application by adding an Azure-specific configuration:
+
+    import os
+    # ...existing imports...
+
+    app = Flask(__name__)
+    app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', 'postgresql://billj:56789@localhost:5432/pymegcrse')
+    app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'chocobo123')
+
+Create a requirements.txt file:
+
+    pip freeze > requirements.txt
+
+Add startup command file for Azure:
+
+    gunicorn --bind=0.0.0.0 --timeout 600 app:app
+
+Install Azure CLI and login:
+
+    # Install Azure CLI
+    winget install -e --id Microsoft.AzureCLI
+
+    # Login to Azure
+    az login
+
+Create Azure resources:
+
+    # Create resource group
+    az group create --name myResourceGroup --location eastus
+
+    # Create PostgreSQL database
+    az postgres flexible-server create \
+        --resource-group myResourceGroup \
+        --name mydbserver \
+        --location eastus \
+        --admin-user billj \
+        --admin-password your_password \
+        --sku-name Standard_B1ms
+
+    # Create web app
+    az webapp up \
+        --resource-group myResourceGroup \
+        --name your-unique-app-name \
+        --runtime "PYTHON:3.9" \
+        --sku B1
+
+Configure environment variables in Azure:
+
+    az webapp config appsettings set \
+    --resource-group myResourceGroup \
+    --name your-unique-app-name \
+    --settings \
+    DATABASE_URL="postgresql://billj:your_password@mydbserver.postgres.database.azure.com:5432/pymegcrse" \
+    SECRET_KEY="your_secret_key_here"
+
+Deploy your application:
+
+    # Make sure you're in your project directory
+    cd /c:/Users/willj/DATA_SCIENCE/UDEMY/PythonMegaCourse/WebDev/flask-form-app-postgresql
+
+    # Deploy
+    az webapp up --name your-unique-app-name
+
+Add a .gitignore file:
+
+    __pycache__/
+    *.pyc
+    .env
+    *.db
+    *.log
+
+Important Notes:
+Database Migration: After deployment, you'll need to initialize your database:
+
+    # Connect to Azure Web App
+    az webapp ssh --name your-unique-app-name --resource-group myResourceGroup
+
+    # Once connected, run
+    python
+    >>> from app import db
+    >>> db.create_all()
+    >>> exit()
+
+Monitoring: You can monitor your app through Azure Portal:
+Application logs
+Performance metrics
+Error tracking
+Resource utilization
+Scaling: Through Azure Portal you can:
+Adjust your app service plan
+Set up auto-scaling rules
+Configure deployment slots for zero-downtime deployments
+Security:
+Enable HTTPS only
+Configure network security rules
+Set up Azure Key Vault for secrets
+Cost Management:
+Monitor resource usage
+Set up spending alerts
+Choose appropriate pricing tiers
+Remember to replace placeholder values like your-unique-app-name, your_password, and your_secret_key_here with your actual values.

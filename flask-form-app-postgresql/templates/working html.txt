@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, SHRINK-TO-FIT=no">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/nord-theme.css') }}">
+    </head>
+    
+    <script>
+        // Function to check if URL has any sort or filter parameters
+        function hasTableParameters() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.has('sort') || 
+                   urlParams.has('filter_id') || 
+                   urlParams.has('filter_fname') || 
+                   urlParams.has('filter_lname') || 
+                   urlParams.has('filter_date');
+        }
+    
+        // Show table on page load if there are parameters
+        document.addEventListener('DOMContentLoaded', function() {
+            if (hasTableParameters()) {
+                document.getElementById('formsTable').style.display = 'block';
+            }
+        });
+    
+        // Modified toggle function
+        function toggleTable() {
+            var table = document.getElementById('formsTable');
+            if (table.style.display === 'none') {
+                table.style.display = 'block';
+            } else {
+                table.style.display = 'none';
+            }
+        }
+
+        // Update existing functions and add new ones
+        function handleSort(event, url) {
+            event.preventDefault();
+            updateTableContent(url);
+        }
+
+        function handlePagination(event, url) {
+            event.preventDefault();
+            updateTableContent(url);
+        }
+
+        function updateTableContent(url) {
+            fetch(url)
+                .then(response => response.text())
+                .then(html => {
+                    const temp = document.createElement('div');
+                    temp.innerHTML = html;
+                    const newTable = temp.querySelector('#formsTable');
+                    const currentTable = document.getElementById('formsTable');
+                    currentTable.innerHTML = newTable.innerHTML;
+                })
+                .catch(error => console.error('Error:', error));
+        }
+
+    </script>
+    
+    <body>
+        <div class="container">
+            <h1 class="mt-4 mb-4">Job Application Form</h1>
+            
+            
+
+        <!-- Form Section -->
+            
+            <form method="post">
+                <div class="form-group mb-4">
+                    <label for="first_name">First Name:</label><br>
+                    <input class="form-control" type="text" id="first_name" name="first_name" required><br>
+                </div>
+                <div class="form-group mb-4">
+                    <label for="last_name">Last Name:</label><br>
+                    <input class="form-control" type="text" id="last_name" name="last_name" required><br>
+                </div>
+                <div class="form-group mb-4">
+                    <label for="email">Email:</label><br>
+                    <input class="form-control" type="email" id="email" name="email" required><br>
+                </div>
+                <div class="form-group mb-4">
+                    <label for="date">Available start date:</label>
+                    <input class="form-control" type="date" id="date" name="date" required><br>
+                </div>
+                <div class="form-group mb-4">
+                    <label>Current occupation:</label><br>
+                    <br>
+                    <div class="btn-group-vertical" id="occupation">
+                        <input class="btn-check form-control" type="radio" id="employed" name="occupation" value="employed" required>
+                        <label class="btn btn-outline-secondary" for="employed">Employed</label>      
+                        
+                        <input class="btn-check form-control" type="radio" id="unemployed" name="occupation" value="unemployed" required>
+                        <label class="btn btn-outline-secondary" for="unemployed">Unemployed</label>      
+                        
+                        <input class="btn-check form-control" type="radio" id="self-employed" name="occupation" value="self-employed" required>
+                        <label class="btn btn-outline-secondary" for="self-employed">Self-employed</label>      
+                        
+                        <input class="btn-check form-control" type="radio" id="student" name="occupation" value="student" required>
+                        <label class="btn btn-outline-secondary" for="student">Student</label>      
+                    </div>
+                </div>
+                <button class="btn btn-secondary mb-4" type="submit">Submit</button>        
+            </form>
+                    <!-- Success Flash Message -->
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                            {{ message }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+        </div>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+    
+        <!-- END FORM SECTION-->
+
+        
+
+        <!--TOGGLE VIEW TABLE DATA-->
+        <div class="container mt-5">
+            <button class="btn btn-info mb-3" onclick="toggleTable()">View Submitted Forms</button>
+        </div>
+        
+        <!-- ... submitted forms table section ... -->
+        <div class="container mt-5" id="formsTable" style="display: none;">
+            <h2>Submitted Forms</h2>
+
+                    <!-- Add filter form -->
+            <form method="get" class="mb-4">
+                <div class="row g-3">
+                    <div class="col-md-3">
+                        <input type="number" class="form-control" name="filter_id" placeholder="Filter by ID">
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" class="form-control" name="filter_fname" placeholder="Filter by First Name">
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" class="form-control" name="filter_lname" placeholder="Filter by Last Name">
+                    </div>
+                    <div class="col-md-3">
+                        <input type="date" class="form-control" name="filter_date">
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary">Apply Filters</button>
+                        <a href="{{ url_for('index') }}" class="btn btn-secondary">Clear Filters</a>
+                    </div>
+                </div>
+            </form>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            <a href="#" onclick="handleSort(event, '{{ url_for('index', 
+                                sort='id', 
+                                order='asc' if sort_by != 'id' or order == 'desc' else 'desc',
+                                filter_id=request.args.get('filter_id'),
+                                filter_fname=request.args.get('filter_fname'),
+                                filter_lname=request.args.get('filter_lname'),
+                                filter_date=request.args.get('filter_date')) }}')"
+                                class="text-white text-decoration-none">
+                                ID {% if sort_by == 'id' %}{{ '↑' if order == 'asc' else '↓' }}{% endif %}
+                            </a>
+                        </th>
+                        <th>
+                            <a href="#" onclick="handleSort(event, '{{ url_for('index',
+                                sort='first_name',
+                                order='asc' if sort_by != 'first_name' or order == 'desc' else 'desc',
+                                filter_id=request.args.get('filter_id'),
+                                filter_fname=request.args.get('filter_fname'),
+                                filter_lname=request.args.get('filter_lname'),
+                                filter_date=request.args.get('filter_date')) }}')"
+                                class="text-white text-decoration-none">
+                                First Name {% if sort_by == 'first_name' %}{{ '↑' if order == 'asc' else '↓' }}{% endif %}
+                            </a>
+                        </th>
+                        <th>
+                            <a href="#" onclick="handleSort(event, '{{ url_for('index',
+                                sort='last_name',
+                                order='asc' if sort_by != 'last_name' or order == 'desc' else 'desc',
+                                filter_id=request.args.get('filter_id'),
+                                filter_fname=request.args.get('filter_fname'),
+                                filter_lname=request.args.get('filter_lname'),
+                                filter_date=request.args.get('filter_date')) }}')"
+                                class="text-white text-decoration-none">
+                                Last Name {% if sort_by == 'last_name' %}{{ '↑' if order == 'asc' else '↓' }}{% endif %}
+                            </a>
+                        </th>
+                        <th>
+                            <a href="#" onclick="handleSort(event, '{{ url_for('index',
+                                sort='email',
+                                order='asc' if sort_by != 'email' or order == 'desc' else 'desc',
+                                filter_id=request.args.get('filter_id'),
+                                filter_fname=request.args.get('filter_fname'),
+                                filter_lname=request.args.get('filter_lname'),
+                                filter_date=request.args.get('filter_date')) }}')"
+                                class="text-white text-decoration-none">
+                                Email {% if sort_by == 'email' %}{{ '↑' if order == 'asc' else '↓' }}{% endif %}
+                            </a>
+                        </th>
+                        <th>
+                            <a href="#" onclick="handleSort(event, '{{ url_for('index',
+                                sort='date',
+                                order='asc' if sort_by != 'date' or order == 'desc' else 'desc',
+                                filter_id=request.args.get('filter_id'),
+                                filter_fname=request.args.get('filter_fname'),
+                                filter_lname=request.args.get('filter_lname'),
+                                filter_date=request.args.get('filter_date')) }}')"
+                                class="text-white text-decoration-none">
+                                Date {% if sort_by == 'date' %}{{ '↑' if order == 'asc' else '↓' }}{% endif %}
+                            </a>
+                        </th>
+                        <th>
+                            <a href="#" onclick="handleSort(event, '{{ url_for('index',
+                                sort='occupation',
+                                order='asc' if sort_by != 'occupation' or order == 'desc' else 'desc',
+                                filter_id=request.args.get('filter_id'),
+                                filter_fname=request.args.get('filter_fname'),
+                                filter_lname=request.args.get('filter_lname'),
+                                filter_date=request.args.get('filter_date')) }}')"
+                                class="text-white text-decoration-none">
+                                Occupation {% if sort_by == 'occupation' %}{{ '↑' if order == 'asc' else '↓' }}{% endif %}
+                            </a>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for entry in form_data %}
+                    <tr>
+                        <td>{{ entry.id }}</td>
+                        <td>{{ entry.first_name }}</td>
+                        <td>{{ entry.last_name }}</td>
+                        <td>{{ entry.email }}</td>
+                        <td>{{ entry.date }}</td>
+                        <td>{{ entry.occupation }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+            <!-- Add after the table -->
+            <nav aria-label="Page navigation">
+                <ul class="pagination justify-content-center">
+                    {% if pagination.has_prev %}
+                    <li class="page-item">
+                        <a class="page-link" href="#" onclick="handlePagination(event, '{{ url_for('index', 
+                            page=pagination.prev_num, 
+                            sort=sort_by, 
+                            order=order,
+                            filter_id=request.args.get('filter_id'),
+                            filter_fname=request.args.get('filter_fname'),
+                            filter_lname=request.args.get('filter_lname'),
+                            filter_date=request.args.get('filter_date')) }}')">Previous</a>
+                    </li>
+                    {% endif %}
+                    
+                    {% for page_num in pagination.iter_pages() %}
+                        {% if page_num %}
+                            <li class="page-item {% if page_num == pagination.page %}active{% endif %}">
+                                <a class="page-link" href="#" onclick="handlePagination(event, '{{ url_for('index', 
+                                    page=page_num, 
+                                    sort=sort_by, 
+                                    order=order,
+                                    filter_id=request.args.get('filter_id'),
+                                    filter_fname=request.args.get('filter_fname'),
+                                    filter_lname=request.args.get('filter_lname'),
+                                    filter_date=request.args.get('filter_date')) }}')">{{ page_num }}</a>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                    
+                    {% if pagination.has_next %}
+                    <li class="page-item">
+                        <a class="page-link" href="#" onclick="handlePagination(event, '{{ url_for('index', 
+                            page=pagination.next_num, 
+                            sort=sort_by, 
+                            order=order,
+                            filter_id=request.args.get('filter_id'),
+                            filter_fname=request.args.get('filter_fname'),
+                            filter_lname=request.args.get('filter_lname'),
+                            filter_date=request.args.get('filter_date')) }}')">Next</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Download and Upload Section -->
+        <div class="container mt-4">
+            <a href="{{ url_for('download') }}" class="btn btn-primary mb-4">Download as CSV</a>
+            
+            <!-- Upload Form -->
+            <form method="post" action="{{ url_for('upload') }}" enctype="multipart/form-data" class="mb-5">
+                <div class="mb-3">
+                    <label for="file" class="form-label">Upload CSV File</label>
+                    <input type="file" class="form-control" id="file" name="file" accept=".csv">
+                </div>
+                <button type="submit" class="btn btn-primary">Upload CSV</button>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+    <script>
+        function toggleTable() {
+            var table = document.getElementById('formsTable');
+            if (table.style.display === 'none') {
+                table.style.display = 'block';
+            } else {
+                table.style.display = 'none';
+            }
+        }
+
+        // Replace the existing handleSort function with this one
+        function handleSort(event, url) {
+            event.preventDefault();
+            updateTableContent(url);
+        }
+
+        function handlePagination(event, url) {
+            event.preventDefault();
+            updateTableContent(url);
+        }
+
+        function updateTableContent(url) {
+            fetch(url)
+                .then(response => response.text())
+                .then(html => {
+                    const temp = document.createElement('div');
+                    temp.innerHTML = html;
+                    const newTable = temp.querySelector('#formsTable');
+                    const currentTable = document.getElementById('formsTable');
+                    currentTable.innerHTML = newTable.innerHTML;
+                })
+                .catch(error => console.error('Error:', error));
+        }
+
+        // Remove or comment out the scroll-related code in DOMContentLoaded
+        document.addEventListener('DOMContentLoaded', function() {
+            if (hasTableParameters()) {
+                document.getElementById('formsTable').style.display = 'block';
+            }
+        });
+    </script>
+    </body>
+    
+</html>

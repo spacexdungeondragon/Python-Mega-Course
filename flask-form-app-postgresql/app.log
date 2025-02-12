@@ -1,0 +1,123 @@
+2025-02-08 23:43:23,120 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2025-02-08 23:43:23,120 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-02-08 23:48:01,900 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.0.33:5001
+2025-02-08 23:48:01,900 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-02-08 23:49:23,237 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2025-02-08 23:49:23,237 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-02-08 23:49:23,239 - werkzeug - INFO -  * Restarting with stat
+2025-02-08 23:49:23,997 - werkzeug - WARNING -  * Debugger is active!
+2025-02-08 23:49:24,006 - werkzeug - INFO -  * Debugger PIN: 969-392-500
+2025-02-08 23:49:33,009 - werkzeug - INFO - 127.0.0.1 - - [08/Feb/2025 23:49:33] "GET / HTTP/1.1" 200 -
+2025-02-08 23:49:33,067 - werkzeug - INFO - 127.0.0.1 - - [08/Feb/2025 23:49:33] "[36mGET /static/css/nord-theme.css HTTP/1.1[0m" 304 -
+2025-02-08 23:49:33,102 - werkzeug - INFO - 127.0.0.1 - - [08/Feb/2025 23:49:33] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-02-08 23:51:41,481 - werkzeug - INFO -  * Detected change in 'C:\\Users\\willj\\DATA_SCIENCE\\UDEMY\\PythonMegaCourse\\WebDev\\flask-form-app-postgresql\\app.py', reloading
+2025-02-08 23:51:41,672 - werkzeug - INFO -  * Restarting with stat
+2025-02-08 23:51:42,492 - werkzeug - WARNING -  * Debugger is active!
+2025-02-08 23:51:42,500 - werkzeug - INFO -  * Debugger PIN: 969-392-500
+2025-02-08 23:51:45,037 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2025-02-08 23:51:45,037 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-02-08 23:51:45,039 - werkzeug - INFO -  * Restarting with stat
+2025-02-08 23:51:45,802 - werkzeug - WARNING -  * Debugger is active!
+2025-02-08 23:51:45,809 - werkzeug - INFO -  * Debugger PIN: 969-392-500
+2025-02-08 23:51:49,834 - werkzeug - INFO - 127.0.0.1 - - [08/Feb/2025 23:51:49] "GET / HTTP/1.1" 200 -
+2025-02-08 23:51:49,886 - werkzeug - INFO - 127.0.0.1 - - [08/Feb/2025 23:51:49] "[36mGET /static/css/nord-theme.css HTTP/1.1[0m" 304 -
+2025-02-08 23:51:56,346 - werkzeug - INFO - 127.0.0.1 - - [08/Feb/2025 23:51:56] "GET / HTTP/1.1" 200 -
+2025-02-08 23:51:56,411 - werkzeug - INFO - 127.0.0.1 - - [08/Feb/2025 23:51:56] "[36mGET /static/css/nord-theme.css HTTP/1.1[0m" 304 -
+2025-02-08 23:51:56,478 - werkzeug - INFO - 127.0.0.1 - - [08/Feb/2025 23:51:56] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-02-08 23:52:57,907 - werkzeug - INFO - 127.0.0.1 - - [08/Feb/2025 23:52:57] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-02-08 23:52:57,914 - werkzeug - INFO - 127.0.0.1 - - [08/Feb/2025 23:52:57] "GET / HTTP/1.1" 200 -
+2025-02-08 23:52:57,922 - werkzeug - INFO - 127.0.0.1 - - [08/Feb/2025 23:52:57] "[36mGET /static/css/nord-theme.css HTTP/1.1[0m" 304 -
+2025-02-08 23:53:26,162 - werkzeug - INFO -  * Detected change in 'C:\\Users\\willj\\DATA_SCIENCE\\UDEMY\\PythonMegaCourse\\WebDev\\flask-form-app-postgresql\\app.py', reloading
+2025-02-08 23:53:26,296 - werkzeug - INFO -  * Restarting with stat
+2025-02-08 23:53:26,864 - werkzeug - INFO -  * Detected change in 'C:\\Users\\willj\\DATA_SCIENCE\\UDEMY\\PythonMegaCourse\\WebDev\\flask-form-app-postgresql\\app.py', reloading
+2025-02-08 23:53:27,036 - werkzeug - INFO -  * Restarting with stat
+2025-02-08 23:53:27,161 - werkzeug - WARNING -  * Debugger is active!
+2025-02-08 23:53:27,169 - werkzeug - INFO -  * Debugger PIN: 969-392-500
+2025-02-08 23:53:27,829 - werkzeug - WARNING -  * Debugger is active!
+2025-02-08 23:53:27,836 - werkzeug - INFO -  * Debugger PIN: 969-392-500
+2025-02-08 23:53:29,682 - werkzeug - INFO - 127.0.0.1 - - [08/Feb/2025 23:53:29] "GET / HTTP/1.1" 200 -
+2025-02-08 23:53:29,733 - werkzeug - INFO - 127.0.0.1 - - [08/Feb/2025 23:53:29] "[36mGET /static/css/nord-theme.css HTTP/1.1[0m" 304 -
+2025-02-08 23:54:11,160 - werkzeug - INFO - 127.0.0.1 - - [08/Feb/2025 23:54:11] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-02-08 23:54:11,167 - werkzeug - INFO - 127.0.0.1 - - [08/Feb/2025 23:54:11] "GET / HTTP/1.1" 200 -
+2025-02-08 23:54:11,175 - werkzeug - INFO - 127.0.0.1 - - [08/Feb/2025 23:54:11] "[36mGET /static/css/nord-theme.css HTTP/1.1[0m" 304 -
+2025-02-08 23:54:27,050 - werkzeug - INFO -  * Detected change in 'C:\\Users\\willj\\DATA_SCIENCE\\UDEMY\\PythonMegaCourse\\WebDev\\flask-form-app-postgresql\\app.py', reloading
+2025-02-08 23:54:27,169 - werkzeug - INFO -  * Restarting with stat
+2025-02-08 23:54:27,386 - werkzeug - INFO -  * Detected change in 'C:\\Users\\willj\\DATA_SCIENCE\\UDEMY\\PythonMegaCourse\\WebDev\\flask-form-app-postgresql\\app.py', reloading
+2025-02-08 23:54:27,535 - werkzeug - INFO -  * Restarting with stat
+2025-02-08 23:54:28,004 - werkzeug - WARNING -  * Debugger is active!
+2025-02-08 23:54:28,014 - werkzeug - INFO -  * Debugger PIN: 969-392-500
+2025-02-08 23:54:28,332 - werkzeug - WARNING -  * Debugger is active!
+2025-02-08 23:54:28,340 - werkzeug - INFO -  * Debugger PIN: 969-392-500
+2025-02-08 23:54:30,333 - werkzeug - INFO - 127.0.0.1 - - [08/Feb/2025 23:54:30] "GET / HTTP/1.1" 200 -
+2025-02-08 23:54:30,382 - werkzeug - INFO - 127.0.0.1 - - [08/Feb/2025 23:54:30] "[36mGET /static/css/nord-theme.css HTTP/1.1[0m" 304 -
+2025-02-08 23:55:13,966 - werkzeug - INFO - 127.0.0.1 - - [08/Feb/2025 23:55:13] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-02-08 23:55:13,973 - werkzeug - INFO - 127.0.0.1 - - [08/Feb/2025 23:55:13] "GET / HTTP/1.1" 200 -
+2025-02-08 23:55:13,980 - werkzeug - INFO - 127.0.0.1 - - [08/Feb/2025 23:55:13] "[36mGET /static/css/nord-theme.css HTTP/1.1[0m" 304 -
+2025-02-09 00:02:30,245 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2025-02-09 00:02:30,245 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-02-09 00:02:30,246 - werkzeug - INFO -  * Restarting with stat
+2025-02-09 00:02:31,049 - werkzeug - WARNING -  * Debugger is active!
+2025-02-09 00:02:31,057 - werkzeug - INFO -  * Debugger PIN: 969-392-500
+2025-02-09 00:02:33,610 - werkzeug - INFO - 127.0.0.1 - - [09/Feb/2025 00:02:33] "GET / HTTP/1.1" 200 -
+2025-02-09 00:02:33,620 - werkzeug - INFO - 127.0.0.1 - - [09/Feb/2025 00:02:33] "[36mGET /static/css/nord-theme.css HTTP/1.1[0m" 304 -
+2025-02-09 00:02:33,673 - werkzeug - INFO - 127.0.0.1 - - [09/Feb/2025 00:02:33] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-02-09 00:03:11,869 - werkzeug - INFO - 127.0.0.1 - - [09/Feb/2025 00:03:11] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-02-09 00:03:11,879 - werkzeug - INFO - 127.0.0.1 - - [09/Feb/2025 00:03:11] "GET / HTTP/1.1" 200 -
+2025-02-09 00:03:11,886 - werkzeug - INFO - 127.0.0.1 - - [09/Feb/2025 00:03:11] "[36mGET /static/css/nord-theme.css HTTP/1.1[0m" 304 -
+2025-02-10 22:04:25,078 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2025-02-10 22:04:25,079 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-02-10 22:04:25,080 - werkzeug - INFO -  * Restarting with stat
+2025-02-10 22:04:25,916 - werkzeug - WARNING -  * Debugger is active!
+2025-02-10 22:04:25,923 - werkzeug - INFO -  * Debugger PIN: 969-392-500
+2025-02-10 22:04:31,825 - werkzeug - INFO - 127.0.0.1 - - [10/Feb/2025 22:04:31] "GET / HTTP/1.1" 200 -
+2025-02-10 22:04:31,882 - werkzeug - INFO - 127.0.0.1 - - [10/Feb/2025 22:04:31] "[36mGET /static/css/nord-theme.css HTTP/1.1[0m" 304 -
+2025-02-10 22:04:31,920 - werkzeug - INFO - 127.0.0.1 - - [10/Feb/2025 22:04:31] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-02-10 22:05:35,133 - werkzeug - INFO - 127.0.0.1 - - [10/Feb/2025 22:05:35] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-02-10 22:05:35,139 - werkzeug - INFO - 127.0.0.1 - - [10/Feb/2025 22:05:35] "GET / HTTP/1.1" 200 -
+2025-02-10 22:05:35,147 - werkzeug - INFO - 127.0.0.1 - - [10/Feb/2025 22:05:35] "[36mGET /static/css/nord-theme.css HTTP/1.1[0m" 304 -
+2025-02-10 22:07:20,515 - werkzeug - INFO -  * Detected change in 'C:\\Users\\willj\\DATA_SCIENCE\\UDEMY\\PythonMegaCourse\\WebDev\\flask-form-app-postgresql\\app.py', reloading
+2025-02-10 22:07:20,721 - werkzeug - INFO -  * Restarting with stat
+2025-02-10 22:07:21,543 - werkzeug - WARNING -  * Debugger is active!
+2025-02-10 22:07:21,550 - werkzeug - INFO -  * Debugger PIN: 969-392-500
+2025-02-10 22:07:28,064 - werkzeug - INFO - 127.0.0.1 - - [10/Feb/2025 22:07:28] "GET / HTTP/1.1" 200 -
+2025-02-10 22:07:28,112 - werkzeug - INFO - 127.0.0.1 - - [10/Feb/2025 22:07:28] "[36mGET /static/css/nord-theme.css HTTP/1.1[0m" 304 -
+2025-02-10 22:07:47,908 - werkzeug - INFO - 127.0.0.1 - - [10/Feb/2025 22:07:47] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-02-10 22:07:47,915 - werkzeug - INFO - 127.0.0.1 - - [10/Feb/2025 22:07:47] "GET / HTTP/1.1" 200 -
+2025-02-10 22:07:47,921 - werkzeug - INFO - 127.0.0.1 - - [10/Feb/2025 22:07:47] "[36mGET /static/css/nord-theme.css HTTP/1.1[0m" 304 -
+2025-02-10 22:10:05,096 - werkzeug - INFO -  * Detected change in 'C:\\Users\\willj\\DATA_SCIENCE\\UDEMY\\PythonMegaCourse\\WebDev\\flask-form-app-postgresql\\app.py', reloading
+2025-02-10 22:10:05,287 - werkzeug - INFO -  * Restarting with stat
+2025-02-10 22:10:06,141 - werkzeug - WARNING -  * Debugger is active!
+2025-02-10 22:10:06,149 - werkzeug - INFO -  * Debugger PIN: 969-392-500
+2025-02-10 22:10:23,110 - werkzeug - INFO - 127.0.0.1 - - [10/Feb/2025 22:10:23] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-02-10 22:10:23,150 - werkzeug - INFO - 127.0.0.1 - - [10/Feb/2025 22:10:23] "GET / HTTP/1.1" 200 -
+2025-02-10 22:10:23,199 - werkzeug - INFO - 127.0.0.1 - - [10/Feb/2025 22:10:23] "[36mGET /static/css/nord-theme.css HTTP/1.1[0m" 304 -
+2025-02-10 22:13:14,771 - werkzeug - INFO -  * Detected change in 'C:\\Users\\willj\\DATA_SCIENCE\\UDEMY\\PythonMegaCourse\\WebDev\\flask-form-app-postgresql\\app.py', reloading
+2025-02-10 22:13:14,977 - werkzeug - INFO -  * Restarting with stat
+2025-02-10 22:13:15,887 - werkzeug - WARNING -  * Debugger is active!
+2025-02-10 22:13:15,894 - werkzeug - INFO -  * Debugger PIN: 969-392-500
+2025-02-10 22:13:37,981 - werkzeug - INFO -  * Detected change in 'C:\\Users\\willj\\DATA_SCIENCE\\UDEMY\\PythonMegaCourse\\WebDev\\flask-form-app-postgresql\\app.py', reloading
+2025-02-10 22:13:38,161 - werkzeug - INFO -  * Restarting with stat
+2025-02-10 22:13:38,980 - werkzeug - WARNING -  * Debugger is active!
+2025-02-10 22:13:38,987 - werkzeug - INFO -  * Debugger PIN: 969-392-500
+2025-02-10 22:14:22,849 - werkzeug - INFO - 127.0.0.1 - - [10/Feb/2025 22:14:22] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-02-10 22:14:22,883 - werkzeug - INFO - 127.0.0.1 - - [10/Feb/2025 22:14:22] "GET / HTTP/1.1" 200 -
+2025-02-10 22:14:22,933 - werkzeug - INFO - 127.0.0.1 - - [10/Feb/2025 22:14:22] "[36mGET /static/css/nord-theme.css HTTP/1.1[0m" 304 -
+2025-02-10 22:16:42,585 - werkzeug - INFO -  * Detected change in 'C:\\Users\\willj\\DATA_SCIENCE\\UDEMY\\PythonMegaCourse\\WebDev\\flask-form-app-postgresql\\app.py', reloading
+2025-02-10 22:16:42,766 - werkzeug - INFO -  * Restarting with stat
+2025-02-10 22:16:43,623 - werkzeug - WARNING -  * Debugger is active!
+2025-02-10 22:16:43,631 - werkzeug - INFO -  * Debugger PIN: 969-392-500
+2025-02-10 22:17:28,016 - werkzeug - INFO - 127.0.0.1 - - [10/Feb/2025 22:17:28] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-02-10 22:17:28,059 - werkzeug - INFO - 127.0.0.1 - - [10/Feb/2025 22:17:28] "GET / HTTP/1.1" 200 -
+2025-02-10 22:17:28,114 - werkzeug - INFO - 127.0.0.1 - - [10/Feb/2025 22:17:28] "[36mGET /static/css/nord-theme.css HTTP/1.1[0m" 304 -
+2025-02-10 22:17:43,846 - werkzeug - INFO -  * Detected change in 'C:\\Users\\willj\\DATA_SCIENCE\\UDEMY\\PythonMegaCourse\\WebDev\\flask-form-app-postgresql\\app.py', reloading
+2025-02-10 22:17:44,044 - werkzeug - INFO -  * Restarting with stat
+2025-02-10 22:17:44,882 - werkzeug - WARNING -  * Debugger is active!
+2025-02-10 22:17:44,889 - werkzeug - INFO -  * Debugger PIN: 969-392-500

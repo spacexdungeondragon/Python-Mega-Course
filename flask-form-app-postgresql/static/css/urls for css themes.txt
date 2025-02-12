@@ -1,0 +1,11 @@
+From Copilot:
+
+There are several great resources where you can find free CSS styles and templates for your HTML themes:
+
+1. **Free CSS Templates**: [Free CSS](https://www.free-css.com/free-css-templates) offers a large collection of free website templates that you can download and use in your projects.
+
+2. **W3.CSS Templates**: [W3Schools](https://www.w3schools.com/w3css/w3css_templates.asp) provides a variety of responsive W3.CSS templates that you can modify and use in your projects.
+
+3. **Nicepage CSS Templates**: [Nicepage](https://nicepage.com/css-templates) has over 15,000 free CSS templates available for download. They offer a wide range of styles and designs to suit different needs.
+
+These resources should give you plenty of options to choose from and help you create beautiful and functional HTML themes. Happy designing! If you need any more help, feel free to ask.

@@ -1,0 +1,131 @@
+/* Nord theme colors */
+:root {
+    --background: #2e3440;
+    --current-line: #3b4252;
+    --selection: #434c5e;
+    --foreground: #eceff4;
+    --comment: #4c566a;
+    --cyan: #88c0d0;
+    --green: #a3be8c;
+    --orange: #d08770;
+    --pink: #b48ead;
+    --purple: #5e81ac;
+    --red: #bf616a;
+    --yellow: #ebcb8b;
+}
+
+
+/* Dark theme styles */
+body {
+    background-color: var(--background);
+    color: var(--foreground);
+}
+
+.container {
+    background-color: var(--current-line);
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.table {
+    color: var(--foreground);
+}
+
+/* Add these styles for the table headers */
+.table th a {
+    color: var(--foreground);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.table th a:hover {
+    color: var(--cyan);
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: var(--selection);
+}
+
+.form-control {
+    background-color: var(--selection);
+    border-color: var(--comment);
+    color: var(--foreground);
+}
+
+.form-control:focus {
+    background-color: var(--current-line);
+    border-color: var(--purple);
+    color: var(--foreground);
+}
+
+/* Add this after your .form-control styles */
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    cursor: pointer;
+}
+
+input[type="date"]::-moz-calendar-picker-indicator {
+    filter: invert(1);
+    cursor: pointer;
+}
+
+.filter-form {
+    background-color: var(--current-line);
+    padding: 1rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+.filter-form input {
+    margin-bottom: 0.5rem;
+}
+
+.filter-form button {
+    margin-right: 0.5rem;
+}
+
+.btn-primary {
+    background-color: var(--purple);
+    border-color: var(--purple);
+}
+
+.btn-secondary {
+    background-color: var(--comment);
+    border-color: var(--comment);
+}
+
+.btn-info {
+    background-color: var(--cyan);
+    border-color: var(--cyan);
+    color: var(--background);
+}
+
+.btn-outline-secondary {
+    color: var(--foreground);
+    border-color: var(--comment);
+}
+
+.btn-outline-secondary:hover {
+    background-color: var(--comment);
+    border-color: var(--comment);
+}
+
+.alert {
+    background-color: var(--current-line);
+    border-color: var(--comment);
+    color: var(--foreground);
+}
+
+.alert-success {
+    background-color: var(--green);
+    color: var(--background);
+}
+
+.alert-error {
+    background-color: var(--red);
+    color: var(--foreground);
+}
