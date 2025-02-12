@@ -1,0 +1,63 @@
+django-admin startproject mysite .
+
+python manage.py startapp job_application
+
+# if you wanted to add a blog to the website, you could execute the command below
+python manage.py startapp job_blog
+
+add the "job_application", app tp the installed appsettings
+
+run the django app
+python manage.py runserver
+
+###################################################
+
+#NOTE: Because the instructor is using pycharm and I am using VSCode, the commands are different to execute Terminal versus Powershell.
+To switch to a terminal and not use powershell to save confusion, follow the steps below:
+
+###################################################
+
+Change Default Terminal:
+
+Press Ctrl + Shift + P to open the command palette
+Type "Terminal: Select Default Profile"
+Choose "Command Prompt" or "Git Bash" (Command Prompt is closer to PyCharm's terminal)
+Open New Terminal with Selected Profile:
+
+Press Ctrl + ` to open a new terminal
+Or go to Terminal > New Terminal in the menu
+Switch Existing Terminal:
+
+Click the + dropdown in the terminal panel
+Select "Command Prompt" or your preferred shell
+For This Session Only:
+
+Click the dropdown arrow next to the + in your terminal
+Select "Command Prompt" to open a new CMD terminal
+
+Now you can use the same commands as the instructor:
+        rem These commands will work the same as in PyCharm
+        type nul > job_application\migrations\__init__.py
+        del db.sqlite3
+        del job_application\migrations\*.py
+Remember to keep __init__.py when deleting migration files:
+    rem Preserve __init__.py while deleting other migration files
+    copy job_application\migrations\__init__.py temp.py
+    del job_application\migrations\*.py
+    copy temp.py job_application\migrations\__init__.py
+    del temp.py
+
+##################################################
+
+add the fields to the models.py file
+If you add more fields in the future after running the python manage.py makemigrations command, then you will need to run the command again after creating new fields. Refer to section 52, day 52, app 17, video 417 at the end of the video.
+
+run the command
+python manage.py makemigrations
+
+then to send the changes to the DB in sqlite run
+python manage.py migrate
+
+
+
+
